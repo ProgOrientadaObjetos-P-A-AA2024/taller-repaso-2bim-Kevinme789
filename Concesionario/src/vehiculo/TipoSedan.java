@@ -9,5 +9,6 @@ package vehiculo;
  * @author KevinR
  */
 public class TipoSedan {
-    
+    private double porcentajeDescuento;
+    private double valorDescuento;
 }
