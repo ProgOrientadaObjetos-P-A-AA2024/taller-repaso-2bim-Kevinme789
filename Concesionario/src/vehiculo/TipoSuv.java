@@ -41,4 +41,14 @@ public class TipoSuv extends Vehiculo {
         precioFinal = precioBase + seguroPersonas;
     }
 
+    @Override
+    public String toString() {
+        String cadena = String.format("%sPorcentaje Adicional de Personas: "
+                + "%.0f%%\n"
+                + "Seguro de Personas: %.2f\n"
+                + "Precio Final: %.2f\n", super.toString(), porcentajePersonas,
+                seguroPersonas, precioFinal);
+        return cadena;
+    }
+
 }

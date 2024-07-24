@@ -53,4 +53,15 @@ public abstract class Vehiculo {
         precioBase = p;
     }
 
+    @Override
+    public String toString() {
+        String cadena = String.format("-----Datos Comprador--------\n"
+                + "Nombre: %s\n"
+                + "Cedula: %s\n"
+                + "Marca: %s\n"
+                + "Precio Base: %.2f\n",propietario.obtenerNombres(),
+                propietario.obtenerCedula(), marca,precioBase);
+        return cadena;
+    }
+
 }

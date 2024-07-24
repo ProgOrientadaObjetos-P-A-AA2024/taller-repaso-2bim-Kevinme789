@@ -59,7 +59,7 @@ public class Concesionario {
     public void establecerVehiculoCaro() {
         vehiculoCaro = 0;
         for (int i = 0; i < vehiculos.size(); i++) {
-            if (vehiculos.get(i).obtenerPrecioFinal()>vehiculoCaro) {
+            if (vehiculos.get(i).obtenerPrecioFinal() > vehiculoCaro) {
                 vehiculoCaro = vehiculos.get(i).obtenerPrecioFinal();
             }
         }
@@ -71,13 +71,27 @@ public class Concesionario {
 
     public void establecerVehiculoBarato() {
         for (int i = 0; i < vehiculos.size(); i++) {
-            if (i==0 ) {
+            if (i == 0) {
                 vehiculoBarato = vehiculos.get(i).obtenerPrecioFinal();
             }
-            if (vehiculos.get(i).obtenerPrecioFinal()<vehiculoBarato) {
+            if (vehiculos.get(i).obtenerPrecioFinal() < vehiculoBarato) {
                 vehiculoBarato = vehiculos.get(i).obtenerPrecioFinal();
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        String cadena = String.format("CONCESIONARIA %s\n", nombreConcesionaria);
+        for (int i = 0; i < vehiculos.size(); i++) {
+            cadena = String.format("%s%s", cadena, vehiculos.get(i));
+        }
+        cadena = String.format("%s\nVehiculo mas Caro: %.2f\n"
+                + "Vehiculo mas Barato: %.2f\n"
+                + "Venta Total: %.2f", cadena, vehiculoCaro, vehiculoBarato,
+                ventaTotal);
+        return cadena;
+
     }
 
 }
